@@ -10,6 +10,9 @@
     /* Typography */
     --font-body: brixton, sans-serif;
     --letter-spacing: 0.05rem;
+    --font-size: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
 
     /* Spacer */
     --space-1: 0.25rem;
@@ -21,4 +24,9 @@
 
     /* Borders */
     --radius: .5rem;
+
+    /* Shadow */
+    --shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

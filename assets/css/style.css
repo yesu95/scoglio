@@ -15,9 +15,10 @@ html {
 
 body {
     min-height: 100vh;
-    line-height: 1.5;
     font-family: system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
+    background-color: var(--color-bg);
+    color: var(--color-black);
 }
 
 img,
@@ -133,7 +134,10 @@ table {
 
 .page-content p {
     margin-bottom: 1rem;
-    color: var(--color-white);
+}
+
+.img {
+    box-shadow: var(--shadow);
 }
 
 /* ----------- Header ---------- */
@@ -145,6 +149,10 @@ table {
     padding: 0;
     min-height: 3.5rem;
 
+    /* Position arreglar en el futuro cuando se implemente el JS */
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .nav__list {
@@ -202,4 +210,73 @@ table {
 .btn__reservation:hover::before,
 .btn__reservation:focus-visible::before {
     transform: scaleX(1);
+}
+
+/* Section Concept */
+
+.section__concept {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-6);
+    min-height: 100svh;
+}
+
+.img__container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.img__concept {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img__concept--main {
+    width: 85%;
+    aspect-ratio: 5 / 4;
+    top: 0;
+    left: 0;
+}
+
+.img__concept--secondary {
+    width: 45%;
+    aspect-ratio: 1 / 1;
+    bottom: 15%;
+    right: 0;
+}
+
+.title__container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.concept__title {
+    font-size: clamp(1.75rem, 5vw, 5rem);
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--color-accent);
+    text-transform: capitalize;
+    letter-spacing: var(--letter-spacing);
+}
+
+.concept__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.concept__text .concept__title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.concept__description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 35rem;
 }
