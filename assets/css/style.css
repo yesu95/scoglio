@@ -27,7 +27,7 @@ video,
 canvas,
 svg {
     display: block;
-    max-width: 100%;
+    width: 100%;
 }
 
 input,
@@ -76,6 +76,31 @@ table {
 
 * {
     font-family: var(--font-body);
+}
+
+.title--s {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--color-accent);
+}
+
+.title--m {
+    font-size: clamp(1.75rem, 3.5vw, 3.5rem);
+    color: var(--color-accent);
+}
+
+.title--l {
+    font-size: clamp(1.75rem, 5vw, 5rem);
+    color: var(--color-accent);
+}
+
+.text--m {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* ---------- Section ---------- */
+
+.section {
+    padding: var(--space-7) var(--space-6);
 }
 
 /* ---------- Banner Principal ---------- */
@@ -132,10 +157,6 @@ table {
     background-color: var(--color-bg);
 }
 
-.page-content p {
-    margin-bottom: 1rem;
-}
-
 .img {
     box-shadow: var(--shadow);
 }
@@ -148,6 +169,8 @@ table {
     align-items: center;
     padding: 0;
     min-height: 3.5rem;
+    z-index: 10;
+    background-color: var(--color-bg);
 
     /* Position arreglar en el futuro cuando se implemente el JS */
     position: fixed;
@@ -160,7 +183,7 @@ table {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding-left: var(--space-4);
+    padding-left: var(--space-6);
     color: var(--color-accent);
 }
 
@@ -212,20 +235,19 @@ table {
     transform: scaleX(1);
 }
 
-/* Section Concept */
+/* ---------- Section Concept ---------- */
 
 .section__concept {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     gap: var(--space-6);
-    padding: var(--space-6);
     min-height: 100svh;
 }
 
-.img__container {
+.section__concept .img__container {
     position: relative;
-    width: 100%;
+    width: 50%;
     aspect-ratio: 1 / 1;
 }
 
@@ -252,12 +274,11 @@ table {
 .title__container {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 7%;
     z-index: 2;
 }
 
 .concept__title {
-    font-size: clamp(1.75rem, 5vw, 5rem);
     line-height: 1;
     white-space: nowrap;
     color: var(--color-accent);
@@ -272,11 +293,47 @@ table {
     height: 100%;
 }
 
-.concept__text .concept__title {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
+.concept__description {
+    max-width: 35rem;
+    line-height: 1.75rem;
+    letter-spacing: .65;
+    margin-bottom: 3rem;
 }
 
-.concept__description {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    max-width: 35rem;
+/* ---------- Section Craftsmanship ---------- */
+
+.section__craftsmanship {
+    margin-block: var(--space-7);
+}
+
+.craftsmanship__description {
+    text-align: center;
+    max-width: 50rem;
+    margin: auto;
+    margin-block: 1.5rem;
+}
+
+.craftsmanship__title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.title__line--left:before,
+.title__line--right:after {
+    content: "";
+    display: block;
+    flex: 1;
+    max-width: 100%;
+    height: 0.25rem;
+    background-color: var(--color-accent);
+    align-self: center;
+}
+
+.title__line--right:after {
+    margin-left: var(--space-3);
+}
+
+.title__line--left:before {
+    margin-right: var(--space-3);
 }
