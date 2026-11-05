@@ -191,6 +191,20 @@ table {
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing);
     font-size: 1.15rem;
+    position: relative;
+}
+
+.nav__link--active:after {
+    content: "";
+    display: block;
+    width: .35rem;
+    height: .35rem;
+    border-radius: var(--radius);
+    background-color: var(--color-accent);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 
 .nav__logo {
