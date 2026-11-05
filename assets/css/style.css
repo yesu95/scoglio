@@ -97,10 +97,26 @@ table {
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* ---------- Section ---------- */
+/* ---------- Global ---------- */
 
 .section {
     padding: var(--space-7) var(--space-6);
+}
+
+.flex {
+    display: flex;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.ta-center {
+    text-align: center;
 }
 
 /* ---------- Banner Principal ---------- */
@@ -244,8 +260,7 @@ table {
     transition: 0.3s ease;
 }
 
-.btn__reservation:hover::before,
-.btn__reservation:focus-visible::before {
+.btn__reservation:hover::before {
     transform: scaleX(1);
 }
 
@@ -324,7 +339,7 @@ table {
     text-align: center;
     max-width: 50rem;
     margin: auto;
-    margin-block: 1.5rem;
+    margin-block: var(--space-5);
 }
 
 .craftsmanship__title {
@@ -350,4 +365,49 @@ table {
 
 .title__line--left:before {
     margin-right: var(--space-3);
+}
+
+/* ------------ Section Menu ------------ */
+
+.section__menu {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    width: 100%;
+}
+
+
+.menu__text {
+    padding-right: var(--space-6);
+    width: 50%;
+}
+
+.section__menu .img__container {
+    width: 50%;
+}
+
+.menu__description {
+    margin-block: var(--space-5);
+}
+
+.category__title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-block: var(--space-7) var(--space-5);
+    font-weight: 600;
+}
+
+.item__title {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    margin-block: var(--space-3);
+}
+
+.menu__item {
+    margin-bottom: var(--space-6);
+}
+
+.img__menu {
+    position: sticky;
+    top: 5rem;
+    width: 30rem;
+    margin: auto;
 }
