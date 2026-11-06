@@ -15,7 +15,6 @@ html {
 
 body {
     min-height: 100vh;
-    font-family: system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     background-color: var(--color-bg);
     color: var(--color-black);
@@ -111,6 +110,14 @@ table {
     justify-content: center;
 }
 
+.row {
+    flex-direction: row;
+}
+
+.col {
+    flex-direction: column;
+}
+
 .ai-center {
     align-items: center;
 }
@@ -119,11 +126,19 @@ table {
     text-align: center;
 }
 
+.margin-b {
+    margin-bottom: var(--space-2);
+}
+
+.gap-05 {
+    gap: var(--space-2);
+}
+
 /* ---------- Banner Principal ---------- */
 
 .section__scroll {
     background-color: var(--color-bg);
-    min-height: 250vh;
+    min-height: 200vh;
 }
 
 .container__header {
@@ -131,14 +146,14 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--color-white);
+    background: var(--color-bg);
     clip-path: circle(0px at left bottom);
     width: 100vw;
     height: 100vh;
     z-index: 2;
     clip-path: circle(0px at left bottom);
     will-change: clip-path;
-    transition: clip-path 0.4s ease-out;
+    transition: 0.05s ease;
 }
 
 .title {
@@ -374,8 +389,8 @@ table {
     justify-content: center;
     gap: var(--space-6);
     width: 100%;
+    padding-bottom: var(--space-10);
 }
-
 
 .menu__text {
     padding-right: var(--space-6);
@@ -415,6 +430,12 @@ table {
 
 /* ---------- Footer ---------- */
 
+.footer {
+    /* position: sticky; */
+    /* bottom: 0; */
+    /* background: red; */
+}
+
 .footer__img {
     background: url(../media/img/footer-bg.jpg);
     height: 25rem;
@@ -434,6 +455,43 @@ table {
     justify-self: center;
     align-items: center;
     bottom: 0;
-    color: white;
+    color: var(--color-white);
     font-size: 15vw;
+}
+
+.footer-data {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-bg);
+    border-top: solid 2px var(--color-accent);
+    padding: var(--space-6);
+}
+
+.container__social,
+.container__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-data {
+    font-size: var(--font-size-lg);
+    letter-spacing: var(--letter-spacing);
+}
+
+.footer-name__title {
+    font-size: var(--font-size-xl);
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.container__btn {
+    display: flex;
+    justify-content: end;
 }
